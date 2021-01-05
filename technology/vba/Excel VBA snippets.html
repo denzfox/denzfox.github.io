@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel VBA Snippets</title>
+</head>
+<body>
+    <p class="snippet">
+        <code>
+Sub Util_wipeTable(t As ListObject)
+    On Error GoTo noData
+    t.DataBodyRange.ClearContents
+    Dim h As Range
+    Set h = Union(t.HeaderRowRange, t.HeaderRowRange.Offset(1, 0))
+    t.Resize h
+    noData:
+End Sub
+        </code>
+    </p>
+
+    <a href="https://denzfox.github.io" class="page home">Back to Homepage</a>
+
+</body>
+</html>
